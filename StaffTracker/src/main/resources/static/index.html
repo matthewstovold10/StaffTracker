@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="headers">
+      <div class="title-bar">
+        <h1>Company Tracker</h1>
+        <button class="hamburgerbtn" onclick="toggleMenu()">
+          <img src="img/icons8-hamburger-menu.svg" class="hamburger-icon" />
+        </button>
+      </div>
+      <div class="header-row">
+        <h2>Staff List</h2>
+        <div class="header-controls">
+          <button id="openFormBtn" onclick="showForm()">Add Staff</button>
+          <button id="openSearchBtn" onclick="showSearch()">Search</button>
+          <select id="departmentFilter" onchange="filterStaff()">
+            <option value="">All Departments</option>
+          </select>
+          <button id="resetBtn" onclick="resetView()">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-backdrop" id="overlay-backdrop" style="display: none">
+      <div class="addForm-overlay">
+        <h3>Add a Staff Member</h3>
+        <input type="text" id="forename" placeholder="Forename" />
+        <input type="text" id="surname" placeholder="Surname" />
+        <input type="text" id="jobTitle" placeholder="JobTitle" />
+        <select id="status">
+          <option value="" disabled selected>Status</option>
+          <option value="Permanent">Permanent</option>
+          <option value="Contractor">Contractor</option>
+        </select>
+        <select id="departmentID">
+          <option value="" disabled selected>Department</option>
+        </select>
+        <select id="managerID">
+          <option value="" disabled selected>Manager</option>
+        </select>
+        <div class="form-buttons">
+          <button onclick="addStaff()">Add Staff</button>
+          <button onclick="hideForm()" class="close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-backdrop" id="search-backdrop" style="display: none">
+      <div class="addForm-overlay">
+        <h3>Search Staff</h3>
+        <input type="text" id="searchID" placeholder="Enter Staff ID" />
+        <input type="text" id="searchName" placeholder="Enter Staff Name" />
+        <div class="form-buttons">
+          <button onclick="searchStaff()">Search</button>
+          <button onclick="hideSearch()" class="close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+    <div id="bigBox">
+      <div id="staffContainer"></div>
+    </div>
+    <script src="script.js"></script>
+    <div class="side-menu" id="sideMenu">
+      <button class="menu-close" onclick="toggleMenu()">&times;</button>
+      <h2>Menu</h2>
+      <a href="#">Staff List</a>
+      <a href="#">Manager List</a>
+      <a href="#">Department List</a>
+    </div>
+    <div class="menu-backdrop" id="menuBackdrop" onclick="toggleMenu()"></div>
+  </body>
+</html>
