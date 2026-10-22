@@ -21,8 +21,8 @@ Built with HTML, CSS, JavaScript, Java (Spring Boot) and MySQL.
 
 ## Screenshots
 
-Staff list-(screenshots/staff-list.png)
+![Staff list](screenshots/staff-list.png)
 
-Add staff form-(screenshots/add-staff.png)
+![Add staff form](screenshots/add-staff.png)
 
-Search-(screenshots/search.png)
+![Search](screenshots/search.png)
